@@ -17,3 +17,10 @@
 ## New Changes Requested
 [x] Extract portrait from mockup image and use as hero image
 [x] Change service portal layout from 2x2 grid to single horizontal row (4 boxes side by side)
+
+## Design Refinements
+[x] Adjust heading text size
+[x] Remove icons from service portal cards
+[x] Standardize text sizes in portal cards
+[x] Align "GÅ TIL PORTAL" buttons to same level
+[x] Replace mental health illustration with real photo

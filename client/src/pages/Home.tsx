@@ -84,7 +84,7 @@ export default function Home() {
         <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
           {/* Text Content - Left */}
           <div className="order-2 md:order-1">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-foreground">
+            <h1 className="text-3xl md:text-4xl font-bold mb-6 text-foreground">
               Hei, jeg er Morten.
             </h1>
             <p className="text-xl md:text-2xl mb-6 text-muted-foreground">
@@ -114,7 +114,7 @@ export default function Home() {
           {servicePortals.map((portal) => (
             <Card 
               key={portal.id}
-              className="overflow-hidden cursor-pointer transition-all hover:shadow-xl hover:-translate-y-1"
+              className="overflow-hidden cursor-pointer transition-all hover:shadow-xl hover:-translate-y-1 flex flex-col"
               onClick={() => setSelectedPortal(portal)}
             >
               <div className="aspect-video relative overflow-hidden">
@@ -124,18 +124,13 @@ export default function Home() {
                   className="w-full h-full object-cover"
                 />
               </div>
-              <CardHeader>
-                <div className="flex items-center gap-3 mb-2">
-                  <div className="text-primary">
-                    {portal.icon}
-                  </div>
-                  <CardTitle className="text-2xl">{portal.title}</CardTitle>
-                </div>
-                <CardDescription className="text-base">
+              <CardHeader className="flex-grow">
+                <CardTitle className="text-lg mb-2">{portal.title}</CardTitle>
+                <CardDescription className="text-sm">
                   {portal.shortDesc}
                 </CardDescription>
               </CardHeader>
-              <CardContent>
+              <CardContent className="pt-0">
                 <Button variant="outline" className="w-full">
                   GÅ TIL PORTAL
                 </Button>
