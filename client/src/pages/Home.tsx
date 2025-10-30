@@ -99,7 +99,7 @@ export default function Home() {
           <div className="order-1 md:order-2 flex justify-center md:justify-end">
             <div className="relative w-full max-w-md">
               <img 
-                src="/morten-portrait.png" 
+                src="/morten-hero.png" 
                 alt="Morten Hoel" 
                 className="w-full h-auto rounded-lg shadow-2xl"
               />
@@ -108,9 +108,9 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Service Portals - 2x2 Grid */}
+      {/* Service Portals - Horizontal Row */}
       <section className="container py-12">
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
           {servicePortals.map((portal) => (
             <Card 
               key={portal.id}

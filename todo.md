@@ -13,3 +13,7 @@
 [x] Create admin panel for managing news posts
 [x] Test all interactive features
 [x] Create user guide documentation
+
+## New Changes Requested
+[x] Extract portrait from mockup image and use as hero image
+[x] Change service portal layout from 2x2 grid to single horizontal row (4 boxes side by side)
