@@ -101,7 +101,7 @@ export default function Home() {
               <img 
                 src="/morten-hero.png" 
                 alt="Morten Hoel" 
-                className="w-full h-auto rounded-lg shadow-2xl"
+                className="w-full h-auto"
               />
             </div>
           </div>

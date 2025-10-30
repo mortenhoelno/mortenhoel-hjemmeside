@@ -24,3 +24,6 @@
 [x] Standardize text sizes in portal cards
 [x] Align "GÅ TIL PORTAL" buttons to same level
 [x] Replace mental health illustration with real photo
+
+## Hero Section Refinement
+[x] Remove shadow and rounded corners from portrait to make it seamless
