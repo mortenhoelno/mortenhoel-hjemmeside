@@ -1,6 +1,6 @@
-import { eq } from "drizzle-orm";
+import { eq, desc } from "drizzle-orm";
 import { drizzle } from "drizzle-orm/mysql2";
-import { InsertUser, users } from "../drizzle/schema";
+import { InsertUser, users, newsPosts, InsertNewsPost, newsletterSubscribers, InsertNewsletterSubscriber } from "../drizzle/schema";
 import { ENV } from './_core/env';
 
 let _db: ReturnType<typeof drizzle> | null = null;
@@ -89,4 +89,49 @@ export async function getUserByOpenId(openId: string) {
   return result.length > 0 ? result[0] : undefined;
 }
 
-// TODO: add feature queries here as your schema grows.
+// News posts helpers
+export async function getAllNewsPosts() {
+  const db = await getDb();
+  if (!db) return [];
+  
+  return await db.select().from(newsPosts).where(eq(newsPosts.published, true)).orderBy(desc(newsPosts.createdAt));
+}
+
+export async function getNewsPostById(id: number) {
+  const db = await getDb();
+  if (!db) return undefined;
+  
+  const result = await db.select().from(newsPosts).where(eq(newsPosts.id, id)).limit(1);
+  return result.length > 0 ? result[0] : undefined;
+}
+
+export async function createNewsPost(post: InsertNewsPost) {
+  const db = await getDb();
+  if (!db) throw new Error("Database not available");
+  
+  const result = await db.insert(newsPosts).values(post);
+  return result;
+}
+
+// Newsletter helpers
+export async function subscribeToNewsletter(subscriber: InsertNewsletterSubscriber) {
+  const db = await getDb();
+  if (!db) throw new Error("Database not available");
+  
+  try {
+    await db.insert(newsletterSubscribers).values(subscriber).onDuplicateKeyUpdate({
+      set: { subscribed: true, updatedAt: new Date() },
+    });
+    return { success: true };
+  } catch (error) {
+    console.error("[Database] Failed to subscribe:", error);
+    throw error;
+  }
+}
+
+export async function getAllSubscribers() {
+  const db = await getDb();
+  if (!db) return [];
+  
+  return await db.select().from(newsletterSubscribers).where(eq(newsletterSubscribers.subscribed, true));
+}
