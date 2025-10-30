@@ -34,3 +34,7 @@
 
 ## Card Image Positioning
 [x] Move images to the very top edge of cards (remove any padding/margin)
+
+## GitHub Setup
+- [ ] Initialize Git repository
+- [ ] Push code to GitHub
