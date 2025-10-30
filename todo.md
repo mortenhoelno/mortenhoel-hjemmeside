@@ -27,3 +27,7 @@
 
 ## Hero Section Refinement
 [x] Remove shadow and rounded corners from portrait to make it seamless
+
+## Responsive Layout Update
+[x] Change service portals to 2x2 grid on mobile (2 columns)
+[x] Keep 4 columns horizontal row on desktop

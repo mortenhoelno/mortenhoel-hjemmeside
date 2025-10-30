@@ -108,9 +108,9 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Service Portals - Horizontal Row */}
+      {/* Service Portals - Responsive Grid */}
       <section className="container py-12">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
           {servicePortals.map((portal) => (
             <Card 
               key={portal.id}
