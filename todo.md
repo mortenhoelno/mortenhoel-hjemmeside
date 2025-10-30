@@ -31,3 +31,6 @@
 ## Responsive Layout Update
 [x] Change service portals to 2x2 grid on mobile (2 columns)
 [x] Keep 4 columns horizontal row on desktop
+
+## Card Image Positioning
+[x] Move images to the very top edge of cards (remove any padding/margin)

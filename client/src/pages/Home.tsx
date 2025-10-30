@@ -114,23 +114,23 @@ export default function Home() {
           {servicePortals.map((portal) => (
             <Card 
               key={portal.id}
-              className="overflow-hidden cursor-pointer transition-all hover:shadow-xl hover:-translate-y-1 flex flex-col"
+              className="overflow-hidden cursor-pointer transition-all hover:shadow-xl hover:-translate-y-1 flex flex-col p-0 gap-0"
               onClick={() => setSelectedPortal(portal)}
             >
-              <div className="aspect-video relative overflow-hidden">
+              <div className="aspect-video relative overflow-hidden rounded-t-xl">
                 <img 
                   src={portal.image} 
                   alt={portal.title}
                   className="w-full h-full object-cover"
                 />
               </div>
-              <CardHeader className="flex-grow">
+              <CardHeader className="flex-grow pt-4">
                 <CardTitle className="text-lg mb-2">{portal.title}</CardTitle>
                 <CardDescription className="text-sm">
                   {portal.shortDesc}
                 </CardDescription>
               </CardHeader>
-              <CardContent className="pt-0">
+              <CardContent className="pb-4">
                 <Button variant="outline" className="w-full">
                   GÅ TIL PORTAL
                 </Button>
